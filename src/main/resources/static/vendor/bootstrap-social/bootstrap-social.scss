@@ -6,6 +6,23 @@
  *
  * https://github.com/lipis/bootstrap-social
  */
+/*
+$bs-height-base: ($line-height-computed + $padding-base-vertical * 2);
+$bs-height-lg:   (floor($font-size-large * $line-height-base) + $padding-large-vertical * 2);
+$bs-height-sm:   (floor($font-size-small * 1.5) + $padding-small-vertical * 2);
+$bs-height-xs:   (floor($font-size-small * 1.2) + $padding-small-vertical + 1);
+*/
+$line-height-computed:  3;
+$padding-base-vertical:  3;
+$font-size-large: 15;
+$line-height-base: 10;
+$padding-large-vertical: 3;
+$font-size-small: 8;
+$padding-small-vertical: 3;
+$padding-base-horizontal: 3;
+$padding-base-horizontal: 3;
+$padding-large-horizontal: 3;
+$padding-small-horizontal:  3;
 
 $bs-height-base: ($line-height-computed + $padding-base-vertical * 2);
 $bs-height-lg:   (floor($font-size-large * $line-height-base) + $padding-large-vertical * 2);
@@ -88,7 +105,7 @@ $bs-height-xs:   (floor($font-size-small * 1.2) + $padding-small-vertical + 1);
 
 @mixin btn-social($color-bg, $color: #fff) {
   background-color: $color-bg;
-  @include button-variant($color, $color-bg, rgba(0,0,0,.2));
+  //@include button-variant($color, $color-bg, rgba(0,0,0,.2));
 }
 
 

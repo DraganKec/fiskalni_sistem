@@ -42,7 +42,7 @@ public class Kasa {
     @JoinColumn(name = "modelid")
     private Model model;
 
-    private boolean defiskalicacija;
+    private boolean defiskalizacija;
 
     @Column(name = "datumdefiskalizacije")
     private String datumDefiskalizacije;
@@ -156,12 +156,12 @@ public class Kasa {
         this.model = model;
     }
 
-    public boolean isDefiskalicacija() {
-        return defiskalicacija;
+    public boolean isDefiskalizacija() {
+        return defiskalizacija;
     }
 
-    public void setDefiskalicacija(boolean defiskalicacija) {
-        this.defiskalicacija = defiskalicacija;
+    public void setDefiskalizacija(boolean defiskalizacija) {
+        this.defiskalizacija = defiskalizacija;
     }
 
     public String getDatumDefiskalizacije() {
