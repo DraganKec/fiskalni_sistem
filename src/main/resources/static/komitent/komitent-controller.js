@@ -5,7 +5,6 @@ angular.module('fiskalniSistem')
             $scope.saveKomitent = function (komitent) {
                 komitentService.saveKomitent(komitent);
             };
-
         }])
     .controller('allKomitentsCtrl', ['$scope', '$http', 'komitentService',
         function ($scope, $http, komitentService) {

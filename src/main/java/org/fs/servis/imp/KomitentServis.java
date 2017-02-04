@@ -10,4 +10,6 @@ public interface KomitentServis {
     Iterable<Komitent> getAllKomitents();
 
     Iterable<Komitent> getNazivKomitenata();
+
+    Komitent saveKomitent(Komitent komitent);
 }

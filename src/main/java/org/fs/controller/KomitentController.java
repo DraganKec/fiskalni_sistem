@@ -3,6 +3,7 @@ package org.fs.controller;
 import org.fs.model.Komitent;
 import org.fs.servis.imp.KomitentServis;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,5 +28,10 @@ public class KomitentController {
     @RequestMapping("/getNazivKomitenta")
     public Iterable<Komitent> getNazivKomitenta() {
         return komitentServis.getNazivKomitenata();
+    }
+
+    @RequestMapping("/saveKomitent")
+    public Komitent saveKomitent(@RequestBody Komitent komitent) {
+        return komitentServis.saveKomitent(komitent);
     }
 }

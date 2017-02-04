@@ -1,4 +1,4 @@
-angular.module('myApp', ['ngRoute'])
+angular.module('fiskalniSistem', ['ngRoute'])
 
     .config(function ($routeProvider) {
 
@@ -37,24 +37,6 @@ angular.module('myApp', ['ngRoute'])
             })
             .otherwise({redirectTo: '/'});
     })
-    .controller('addKomitentCtrl', ['$scope', '$http', 'komitentService',
-        function ($scope, $http, komitentService) {
-
-            $scope.saveKomitent = function (komitent) {
-                komitentService.saveKomitent(komitent);
-            };
-
-        }])
-    .controller('allKomitentsCtrl', ['$scope', '$http', 'komitentService',
-        function ($scope, $http, komitentService) {
-
-            komitentService.getAllKomitent().then(function (data) {
-                $scope.allKomitent = data;
-            });
-            $scope.deleteKomitent = function (id) {
-                komitentService.deleteKomitent(id);
-            };
-        }])
     .controller('allKasaCtrl', ['$scope', '$http',
         function ($scope, $http) {
 
@@ -109,109 +91,6 @@ angular.module('myApp', ['ngRoute'])
             });
 
         }])
-    .controller('addModelCtrl', ['$scope', '$http', '$routeParams', 'modelService',
-        function ($scope, $http, $routeParams, modelService) {
-
-            var id = $routeParams.id;
-
-            if (id !== 'undefine') {
-                modelService.getModel(id).then(function (data) {
-                    $scope.model = data;
-                });
-            }
-
-            $scope.addModel = function (model) {
-                modelService.saveModel(model);
-            };
-
-        }])
-    .controller('allModelCtrl', ['$scope', '$http', 'modelService',
-        function ($scope, $http, modelService) {
-
-            modelService.getAllModel().then(function (data) {
-                $scope.allModels = data;
-            });
-
-        }])
-    .factory('modelService', function ($http) {
-
-        return {
-            getAllModel: function () {
-                return $http({
-                    method: "GET",
-                    url: "/getAllModels"
-                }).then(function (response) {
-                    return response.data;
-                });
-            },
-            saveModel: function (model) {
-                return $http({
-                    method: 'POST',
-                    url: '/saveModel',
-                    data: model
-                }).then(function (result) {
-                    return result.data;
-                })
-            },
-            getModel: function (id) {
-                return $http({
-                    method: "POST",
-                    url: "/getModel",
-                    data: id
-                }).then(function (response) {
-                    return response.data;
-                });
-            }
-        }
-    })
-    .factory('komitentService', function ($http) {
-
-        return {
-            getAllKomitent: function () {
-                return $http({
-                    method: "GET",
-                    url: "/getAllKomitents"
-                }).then(function (response) {
-                    return response.data;
-                });
-            },
-            getNazivKomitenta: function () {
-                return $http({
-                    method: "GET",
-                    url: "/getNazivKomitenta"
-                }).then(function (response) {
-                    return response.data;
-                });
-            },
-            saveKomitent: function (komitent) {
-                return $http({
-                    method: 'POST',
-                    url: '/saveKomitent',
-                    data: komitent
-                }).then(function (result) {
-                    return result.data;
-                })
-            },
-            deleteKomitent: function (id) {
-                return $http({
-                    method: 'POST',
-                    url: '/deleteKomitent',
-                    data: id
-                }).then(function (result) {
-                    return result.data;
-                });
-            },
-            getKomitent: function (id) {
-                return $http({
-                    method: 'POST',
-                    url: '/getOneKomitent',
-                    data: id
-                }).then(function (response) {
-                    return response.data;
-                });
-            }
-        }
-    })
     .factory('kasaService', function ($http) {
 
         return {

@@ -27,4 +27,9 @@ public class KomitentServisImpl implements KomitentServis{
     public Iterable<Komitent> getNazivKomitenata() {
         return komitentRepository.getListOfKomitent();
     }
+
+    @Override
+    public Komitent saveKomitent(Komitent komitent) {
+        return komitentRepository.save(komitent);
+    }
 }

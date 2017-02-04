@@ -21,7 +21,7 @@ public class KasaController {
     }
 
     @RequestMapping("/getAllKasa")
-    public Iterable<Kasa> GetAllKasa() {
+    public Iterable<Kasa> getAllKasa() {
         return kasaService.getAll();
     }
 
