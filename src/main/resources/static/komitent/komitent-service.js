@@ -23,11 +23,13 @@ angular.module('fiskalniSistem')
             },
             saveKomitent: function (komitent) {
                 return $http({
-                    method: 'POST',
+                    method: 'GET',
                     url: '/saveKomitent',
                     data: komitent
                 }).then(function (result) {
                     return result.data;
+                }, function () {
+                    return {statusCode: 500};
                 })
             },
             deleteKomitent: function (id) {

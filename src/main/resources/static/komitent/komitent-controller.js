@@ -4,7 +4,10 @@ angular.module('fiskalniSistem')
 
             $scope.saveKomitent = function (komitent) {
                 komitentService.saveKomitent(komitent);
+                $scope.komitent = {};
+                $scope.addKomitentForm.$setPristine();
             };
+
         }])
     .controller('allKomitentsCtrl', ['$scope', '$http', 'komitentService',
         function ($scope, $http, komitentService) {

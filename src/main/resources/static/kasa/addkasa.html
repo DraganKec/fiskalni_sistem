@@ -56,7 +56,7 @@
 
                                 <div class="form-group">
                                     <label>Komitent</label>
-                                    <select class="form-control" ng-model="kasa.komitent">
+                                    <select class="form-control" ng-model="kasa.komitent.id">
                                         <option ng-repeat="komitent in nazivKomitenta" value="{{komitent.id}}">
                                             {{komitent.nazivKomitenta}}
                                         </option>
@@ -93,7 +93,11 @@
                                     <textarea class="form-control" rows="3" ng-model="kasa.napomena"></textarea>
                                 </div>
                                 <td><a ng-click="saveKasa(kasa)">Snimi</a></td>
-                                <!--<td><a ng-href="#/allkasa" ng-click="saveKasa(kasa)">Snimi</a></td>-->
+                                <button type="submit" class="btn btn-default"
+                                        ng-click="saveKasa(kasa)"
+                                        ng-disabled="addKomitentForm.$invalid"> Snimi
+                                </button>
+
                             </div>
                         </form>
                     </div>
